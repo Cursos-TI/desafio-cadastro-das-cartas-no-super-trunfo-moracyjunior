@@ -1,8 +1,10 @@
 #include <stdio.h>
 int main(){
-    char Estado, Codigo[3], Cidade[50], Estado2, Codigo2[3], Cidade2[50];
+    char Estado, Codigo[3], Cidade[52], Estado2, Codigo2[3], Cidade2[50];
     int Populacao, Turisticos, Populacao2, Turisticos2;
     float Area, PIB, Area2, PIB2;
+    float densidade, percapita, densidade2, percapita2;
+
     
     //Carta 1
     //solicitar dado estado
@@ -33,6 +35,7 @@ int main(){
     printf("Carta 1\nInsira o numero de pontos turisticos: \n");
     scanf("%d", &Turisticos);
 
+   
     //Carta 2
     //solicitar dado estado
     printf("Carta 2\nInsira a Letra do Estado de A a H: \n");
@@ -62,13 +65,21 @@ int main(){
     printf("Carta 2\nInsira o numero de pontos turisticos: \n");
     scanf("%d", &Turisticos2);
 
+    densidade = Populacao / Area;
+    densidade2 = Populacao2 / Area2;
+    percapita = PIB / Populacao;
+    percapita2 = PIB2 / Populacao2;
+
     //resultado carta 1
     printf("CARTA 1\n");
     printf("Estado: %c\nCódigo da Carta: %s\n", Estado, Codigo);
     printf("Cidade: %s\nPopulação: %d\n", Cidade, Populacao);
     printf("Área em km²: %f\nPIB: %f\n", Area, PIB);
     printf("Numero de pontos turisticos: %d\n", Turisticos);
+    printf("Densidade populacional Hab/km²: %.2f\n", densidade);
+    printf("PIB per capita: %.2f\n", percapita);
 
+    printf("****************\n");
 
     //resultado carta 2
     printf("CARTA 2\n");
@@ -76,7 +87,8 @@ int main(){
     printf("Cidade: %s\nPopulação: %d\n", Cidade2, Populacao2);
     printf("Área em km²: %f\nPIB: %f\n", Area2, PIB2);
     printf("Numero de pontos turisticos: %d\n", Turisticos2);
-
+    printf("Densidade populacional Hab/km²: %.2f\n", densidade2);
+    printf("PIB per capita: %.2f\n", percapita2);
 
     return 0;
 
