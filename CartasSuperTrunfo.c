@@ -97,33 +97,33 @@ int main(){
     printf("\n");
 
     if(Populacao > Populacao2){
-        printf("População: ** Carta 1 Venceu! **\n");
+        printf("População: ** Venceu %s! **\n", Cidade);
     } else{
-        printf("População: ** Carta 2 Venceu! **\n");
+        printf("População: ** Venceu %s! **\n", Cidade2);
     }
 
     if(Area > Area2){
-        printf("Área em km²: ** Carta 1 Venceu! **\n");
+        printf("Área em km²: ** Venceu %s! **\n", Cidade);
     } else{
-        printf("Área em km²: ** Carta 2 Venceu! **\n");
+        printf("Área em km²: ** Venceu %s! **\n", Cidade2);
     }
 
     if(Turisticos > Turisticos2){
-        printf("Numero de pontos turisticos: ** Carta 1 Venceu! **\n");
+        printf("Numero de pontos turisticos: ** Venceu %s! **\n", Cidade);
     } else{
-        printf("Numero de pontos turisticos: ** Carta 2 Venceu! **\n");
+        printf("Numero de pontos turisticos: ** Venceu %s! **\n", Cidade2);
     }
 
     if(densidade < densidade2){
-        printf("Densidade populacional Hab/km²: ** Carta 1 Venceu! **\n"); 
+        printf("Densidade populacional Hab/km²: ** Venceu %s! **\n", Cidade); 
     } else{
-        printf("Densidade populacional Hab/km²: ** Carta 2 Venceu! **\n");
+        printf("Densidade populacional Hab/km²: ** Venceu %s! **\n", Cidade2);
     }
 
     if(percapita > percapita2){
-        printf("PIB per capita: ** Carta 1 Venceu! **\n"); 
+        printf("PIB per capita: ** Venceu %s! **\n", Cidade); 
     } else{
-        printf("PIB per capita: ** Carta 2 Venceu! **\n");
+        printf("PIB per capita: ** Venceu %s! **\n", Cidade2);
     }
 
 
