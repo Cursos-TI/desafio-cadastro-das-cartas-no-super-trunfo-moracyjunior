@@ -74,21 +74,58 @@ int main(){
     printf("CARTA 1\n");
     printf("Estado: %c\nCódigo da Carta: %s\n", Estado, Codigo);
     printf("Cidade: %s\nPopulação: %d\n", Cidade, Populacao);
-    printf("Área em km²: %f\nPIB: %f\n", Area, PIB);
+    printf("Área em km²: %.2f\nPIB: %.2f\n", Area, PIB);
     printf("Numero de pontos turisticos: %d\n", Turisticos);
     printf("Densidade populacional Hab/km²: %.2f\n", densidade);
     printf("PIB per capita: %.2f\n", percapita);
 
+    printf("\n");
     printf("****************\n");
+    printf("\n");
 
     //resultado carta 2
     printf("CARTA 2\n");
     printf("Estado: %c\nCódigo da Carta: %s\n", Estado2, Codigo2);
     printf("Cidade: %s\nPopulação: %d\n", Cidade2, Populacao2);
-    printf("Área em km²: %f\nPIB: %f\n", Area2, PIB2);
+    printf("Área em km²: %.2f\nPIB: %.2f\n", Area2, PIB2);
     printf("Numero de pontos turisticos: %d\n", Turisticos2);
     printf("Densidade populacional Hab/km²: %.2f\n", densidade2);
     printf("PIB per capita: %.2f\n", percapita2);
+
+    printf("\n");
+    printf("***Resultado da Batalha***\n");
+    printf("\n");
+
+    if(Populacao > Populacao2){
+        printf("População: ** Carta 1 Venceu! **\n");
+    } else{
+        printf("População: ** Carta 2 Venceu! **\n");
+    }
+
+    if(Area > Area2){
+        printf("Área em km²: ** Carta 1 Venceu! **\n");
+    } else{
+        printf("Área em km²: ** Carta 2 Venceu! **\n");
+    }
+
+    if(Turisticos > Turisticos2){
+        printf("Numero de pontos turisticos: ** Carta 1 Venceu! **\n");
+    } else{
+        printf("Numero de pontos turisticos: ** Carta 2 Venceu! **\n");
+    }
+
+    if(densidade < densidade2){
+        printf("Densidade populacional Hab/km²: ** Carta 1 Venceu! **\n"); 
+    } else{
+        printf("Densidade populacional Hab/km²: ** Carta 2 Venceu! **\n");
+    }
+
+    if(percapita > percapita2){
+        printf("PIB per capita: ** Carta 1 Venceu! **\n"); 
+    } else{
+        printf("PIB per capita: ** Carta 2 Venceu! **\n");
+    }
+
 
     return 0;
 
