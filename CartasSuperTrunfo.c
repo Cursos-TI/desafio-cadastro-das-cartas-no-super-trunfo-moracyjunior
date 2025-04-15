@@ -1,11 +1,12 @@
 #include <stdio.h>
 int main(){
     char Estado, Codigo[3], Cidade[52], Estado2, Codigo2[3], Cidade2[50];
-    int Populacao, Turisticos, Populacao2, Turisticos2;
+    int Populacao, Turisticos, Populacao2, Turisticos2, escolhajogador, escolhajogador2;
     float Area, PIB, Area2, PIB2;
     float densidade, percapita, densidade2, percapita2;
 
-    
+    printf("### INSIRA SUAS CARTAS ###\n");
+
     //Carta 1
     //solicitar dado estado
     printf("Carta 1\nInsira a Letra do Estado de A a H: \n");
@@ -70,7 +71,16 @@ int main(){
     percapita = PIB / Populacao;
     percapita2 = PIB2 / Populacao2;
 
-    //resultado carta 1
+     // Menu tipo de batalha
+     printf("Escolha uma Opção:\n");
+     printf("1. BATALHA COMPLETA\n");
+     printf("2. BATALHA POR ATRIBUTO\n");
+     printf("Escolha:");
+     scanf("%d", &escolhajogador);
+
+switch(escolhajogador){
+ case 1:
+  //resultado carta 1
     printf("CARTA 1\n");
     printf("Estado: %c\nCódigo da Carta: %s\n", Estado, Codigo);
     printf("Cidade: %s\nPopulação: %d\n", Cidade, Populacao);
@@ -83,7 +93,7 @@ int main(){
     printf("****************\n");
     printf("\n");
 
-    //resultado carta 2
+  //resultado carta 2
     printf("CARTA 2\n");
     printf("Estado: %c\nCódigo da Carta: %s\n", Estado2, Codigo2);
     printf("Cidade: %s\nPopulação: %d\n", Cidade2, Populacao2);
@@ -92,42 +102,126 @@ int main(){
     printf("Densidade populacional Hab/km²: %.2f\n", densidade2);
     printf("PIB per capita: %.2f\n", percapita2);
 
+    printf("###############\n");
+    printf("*** Resultado da Batalha Completa ***\n");
     printf("\n");
-    printf("***Resultado da Batalha***\n");
-    printf("\n");
 
-    if(Populacao > Populacao2){
-        printf("População: ** Venceu %s! **\n", Cidade);
-    } else{
-        printf("População: ** Venceu %s! **\n", Cidade2);
-    }
+ if(PIB > PIB2){
+     printf("PIB: ** Venceu %s! **\n", Cidade);
+ } else{
+     printf("PIB: ** Venceu %s! **\n", Cidade2);
+ }
 
-    if(Area > Area2){
-        printf("Área em km²: ** Venceu %s! **\n", Cidade);
-    } else{
-        printf("Área em km²: ** Venceu %s! **\n", Cidade2);
-    }
+ if(Populacao > Populacao2){
+     printf("População: ** Venceu %s! **\n", Cidade);
+ } else{
+     printf("População: ** Venceu %s! **\n", Cidade2);
+ }
 
-    if(Turisticos > Turisticos2){
-        printf("Numero de pontos turisticos: ** Venceu %s! **\n", Cidade);
-    } else{
-        printf("Numero de pontos turisticos: ** Venceu %s! **\n", Cidade2);
-    }
+ if(Area > Area2){
+     printf("Área em km²: ** Venceu %s! **\n", Cidade);
+ } else{
+     printf("Área em km²: ** Venceu %s! **\n", Cidade2);
+ }
 
-    if(densidade < densidade2){
-        printf("Densidade populacional Hab/km²: ** Venceu %s! **\n", Cidade); 
-    } else{
-        printf("Densidade populacional Hab/km²: ** Venceu %s! **\n", Cidade2);
-    }
+ if(Turisticos > Turisticos2){
+     printf("Numero de pontos turisticos: ** Venceu %s! **\n", Cidade);
+ } else{
+     printf("Numero de pontos turisticos: ** Venceu %s! **\n", Cidade2);
+ }
 
-    if(percapita > percapita2){
-        printf("PIB per capita: ** Venceu %s! **\n", Cidade); 
-    } else{
-        printf("PIB per capita: ** Venceu %s! **\n", Cidade2);
-    }
+ if(densidade < densidade2){
+     printf("Densidade populacional Hab/km²: ** Venceu %s! **\n", Cidade); 
+ } else{
+     printf("Densidade populacional Hab/km²: ** Venceu %s! **\n", Cidade2);
+ }
+
+ if(percapita > percapita2){
+     printf("PIB per capita: ** Venceu %s! **\n", Cidade); 
+ } else{
+     printf("PIB per capita: ** Venceu %s! **\n", Cidade2);
+ }
+ break;
+ case 2:
+     // Menu batalha por atributo
+         printf("*** BATALHA POR ATRIBUTO! ***\n");
+         printf("Escolha uma Opção:\n");
+         printf("1. Área em km²\n");
+         printf("2. PIB\n");
+         printf("3. PONTOS TURÍSTICOS\n");
+         printf("4. DENSIDADE POPULACIONAL\n");
+         printf("5. PIB PER CAPITA\n");
+         printf("6. POPULAÇÃO\n");
+         printf("Escolha:");
+         scanf("%d", &escolhajogador2);
+
+       switch(escolhajogador2){
+       case 1:
+       if(Area > Area2){
+             printf("*** Resultado da Batalha por Atributo ***\n");
+             printf("Área em km²: ** Venceu %s! **\n", Cidade);
+       } else{
+             printf("*** Resultado da Batalha por Atributo ***\n");
+             printf("Área em km²: ** Venceu %s! **\n", Cidade2);
+       }
+       break;
+       case 2:
+       if(PIB > PIB2){
+             printf("*** Resultado da Batalha por Atributo ***\n");
+             printf("PIB: ** Venceu %s! **\n", Cidade);
+       } else{
+             printf("*** Resultado da Batalha por Atributo ***\n");
+             printf("PIB: ** Venceu %s! **\n", Cidade2);
+       }
+       break;
+       case 3:
+       if(Turisticos > Turisticos2){
+             printf("*** Resultado da Batalha por Atributo ***\n");
+             printf("Numero de pontos turisticos: ** Venceu %s! **\n", Cidade);
+       } else{
+             printf("*** Resultado da Batalha por Atributo ***\n");
+             printf("Numero de pontos turisticos: ** Venceu %s! **\n", Cidade2);
+       }
+       break;
+       case 4:
+       if(densidade < densidade2){
+             printf("*** Resultado da Batalha por Atributo ***\n");
+             printf("Densidade populacional Hab/km²: ** Venceu %s! **\n", Cidade); 
+       } else{
+             printf("*** Resultado da Batalha por Atributo ***\n");
+             printf("Densidade populacional Hab/km²: ** Venceu %s! **\n", Cidade2);
+       }
+       break;
+       case 5:
+       if(percapita > percapita2){
+             printf("*** Resultado da Batalha por Atributo ***\n");
+             printf("PIB per capita: ** Venceu %s! **\n", Cidade); 
+       } else{
+             printf("*** Resultado da Batalha por Atributo ***\n");
+             printf("PIB per capita: ** Venceu %s! **\n", Cidade2);
+       }
+       break;
+       case 6:
+       if(Populacao > Populacao2){
+             printf("*** Resultado da Batalha por Atributo ***\n");
+             printf("População: ** Venceu %s! **\n", Cidade);
+       } else{
+             printf("*** Resultado da Batalha por Atributo ***\n");
+             printf("População: ** Venceu %s! **\n", Cidade2);
+       }
+       break;
+       default:
+        printf("Opção invalida\n");
+       }
+    break;
+    default:
+     printf("Opção invalida\n");
+
+    
+}
 
 
-    return 0;
+ return 0;
 
 
 }
