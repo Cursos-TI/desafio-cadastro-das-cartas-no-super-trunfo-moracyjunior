@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(){
     char Estado, Codigo[3], Cidade[52], Estado2, Codigo2[3], Cidade2[50];
-    int Populacao, Turisticos, Populacao2, Turisticos2, escolhajogador, escolhajogador2;
+    int Populacao, Turisticos, Populacao2, Turisticos2, escolhajogador, escolhajogador2, atributo1, atributo2, resultado1, resultado2;
     float Area, PIB, Area2, PIB2;
     float densidade, percapita, densidade2, percapita2;
 
@@ -75,6 +75,7 @@ int main(){
      printf("Escolha uma Opção:\n");
      printf("1. BATALHA COMPLETA\n");
      printf("2. BATALHA POR ATRIBUTO\n");
+     printf("3. BATALHA POR DOIS ATRIBUTOS\n");
      printf("Escolha:");
      scanf("%d", &escolhajogador);
 
@@ -213,11 +214,52 @@ switch(escolhajogador){
        default:
         printf("Opção invalida\n");
        }
-    break;
-    default:
-     printf("Opção invalida\n");
+ case 3:
+     // solicitar o primeiro atributo
+     printf("*** BATALHA POR DOIS ATRIBUTOS ***\n");
+     printf("Escolha o Primeiro Atributo\n");
+     printf("1. Área em km²\n");
+     printf("2. PIB\n");
+     printf("3. Pontos Turísticos\n");
+     printf("4. Densidade Populacional\n");
+     printf("5. PIB Percapita\n");
+     printf("6. População\n");
+     printf("Digite o Atributo: ");
+     scanf("%d", &atributo1);
+     
+     // formula ternario para chegar ao atributo vencedor
+     resultado1 = Area > Area2 && PIB > PIB2 && Turisticos > Turisticos2 && densidade < densidade2 && percapita > percapita2 && Populacao > Populacao2 ? 1 : 0;
 
-    
+
+     // solicitar o segundo atributo
+     printf("*** BATALHA POR DOIS ATRIBUTOS ***\n");
+     printf("Escolha o Segundo Atributo\n");
+     printf("### NÃO REPETIR O ATRIBUTO ###\n");
+     printf("1. Área em km²\n");
+     printf("2. PIB\n");
+     printf("3. Pontos Turísticos\n");
+     printf("4. Densidade Populacional\n");
+     printf("5. PIB Percapita\n");
+     printf("6. População\n");
+     printf("Digite o Atributo: ");
+     scanf("%d", &atributo2);
+
+     // formula ternario para chegar ao atributo vencedor
+     resultado2 = Area > Area2 && PIB > PIB2 && Turisticos > Turisticos2 && densidade < densidade2 && percapita > percapita2 && Populacao > Populacao2 ? 1 : 0;
+
+     if ( resultado1 == resultado2 ){
+        printf("** Venceu %s! **\n", Cidade);
+     } else if ( resultado1 != resultado2){
+        printf("** EMPATOU **\n");
+     } else {
+        printf("** Venceu %s! **\n", Cidade2);
+     }
+     break;
+     
+  
+
+    default:
+    printf("OPÇÃO INVALIDA\n");
 }
 
 
